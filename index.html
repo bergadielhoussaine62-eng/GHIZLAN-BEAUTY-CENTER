@@ -1,214 +1,191 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صالون غزلان بيوتي للتزيين النسائي - أبها</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Cairo) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme {
-                extend: {
-                    colors: {
-                        gold: {
-                            50: '#fdfbf7',
-                            100: '#fbe2c3',
-                            500: '#c5a880',
-                            600: '#b39268',
-                            700: '#9e7d53',
-                        },
-                        darkRose: '#2d1b22',
-                    },
-                    fontFamily: {
-                        cairo: ['Cairo', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Cairo', sans-serif; }
-        .hero-bg {
-            background: linear-gradient(rgba(45, 27, 34, 0.85), rgba(45, 27, 34, 0.85)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1600&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-        }
-    </style>
-</head>
-<body class="bg-gold-50 text-slate-800 scroll-smooth">
+import React from 'react';
+import { Phone, MapPin, Clock, Instagram, MessageSquare, Sparkles, Scissors, Heart } from 'lucide-react';
 
-    <!-- Header / Navbar -->
-    <header class="fixed w-full bg-darkRose/95 backdrop-blur-sm text-white z-50 shadow-lg border-b border-gold-500/20">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl md:text-2xl font-bold tracking-wide text-gold-500 flex items-center gap-2">
-                <i class="fa-solid fa-sparkles text-gold-500"></i>
-                غزلان بيوتي
-            </a>
-            <nav class="hidden md:flex space-x-reverse space-x-8 font-medium">
-                <a href="#about" class="hover:text-gold-500 transition-colors">من نحن</a>
-                <a href="#services" class="hover:text-gold-500 transition-colors">خدماتنا</a>
-                <a href="#hours" class="hover:text-gold-500 transition-colors">أوقات العمل</a>
-                <a href="#contact" class="hover:text-gold-500 transition-colors">اتصلي بنا</a>
-            </nav>
-            <a href="tel:+966559379990" class="bg-gold-500 hover:bg-gold-600 text-darkRose font-bold px-5 py-2 rounded-full transition-all duration-300 transform hover:scale-105 shadow-md flex items-center gap-2 text-sm md:text-base">
-                <i class="fa-solid fa-phone"></i>
-                احجزي الآن
-            </a>
+export default function GhizlanBeautyCenter() {
+  // معلومات الصالون من Google Maps
+  const phone = "+966533519842"; // الرقم المتوفر على الخرائط
+  const mapLink = "https://www.google.com/maps/place/GHIZLAN+BEAUTY+CENTER/@18.2284724,42.5871072,17z/";
+  const whatsappLink = `https://wa.me/${phone.replace('+', '')}?text=مرحباً%20صالون%20غزلان%20بيوتي،%20أود%20الاستفسار%20عن%20حجز%20موعد`;
+
+  const services = [
+    { title: "عناية بالشعر", desc: "قص، صبغات، معالجات البروتين والكيراتين بأحدث التقنيات.", icon: <Scissors className="w-6 h-6 text-amber-500" /> },
+    { title: "مكياج سينمائي وعرائس", desc: "إطلالات ساحرة تناسب جميع مناسباتك السعيدة بأيدي خبيرات.", icon: <Sparkles className="w-6 h-6 text-amber-500" /> },
+    { title: "العناية بالأظافر", desc: "باديكير ومانيكير واحترافية في تركيب وتزيين الأظافر.", icon: <Heart className="w-6 h-6 text-amber-500" /> },
+    { title: "عناية بالبشرة", desc: "جلسات تنظيف عميق وماسكات مغذية لإشراقة دائمـة.", icon: <Sparkles className="w-6 h-6 text-amber-500" /> },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#FFF9F9] text-gray-800 font-sans selection:bg-rose-200" dir="rtl">
+      
+      {/* Navbar */}
+      <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-rose-100 shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <div className="text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-600">
+            GHIZLAN BEAUTY
+          </div>
+          <div className="hidden md:flex space-x-8 space-x-reverse text-sm font-medium text-gray-600">
+            <a href="#hero" className="hover:text-rose-500 transition">الرئيسية</a>
+            <a href="#services" className="hover:text-rose-500 transition">خدماتنا</a>
+            <a href="#about" className="hover:text-rose-500 transition">من نحن</a>
+            <a href="#contact" className="hover:text-rose-500 transition">اتصلي بنا</a>
+          </div>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-rose-500 to-rose-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+            احجزي موعدك الآن
+          </a>
         </div>
-    </header>
+      </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center text-white pt-20">
-        <div class="container mx-auto px-6 text-center md:text-right max-w-4xl">
-            <span class="text-gold-500 font-semibold tracking-wider text-sm md:text-base uppercase bg-gold-500/10 px-4 py-2 rounded-full border border-gold-500/30 inline-block mb-6 animate-pulse">صالون غزلان بيوتي للتزيين النسائي</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">تألقي بجمال ساحر <br><span class="text-gold-500">وإطلالة لا تُنسى</span></h1>
-            <p class="text-lg md:text-xl mb-10 text-slate-300 max-w-2xl leading-relaxed">نقدم لكِ في مركز غزلان بيوتي أرقى خدمات العناية بالشعر، البشرة، والمكياج بأيدي أمهر الخبيرات لتبدي دائمًا في أبهى حلة.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="tel:+966559379990" class="bg-gold-500 hover:bg-gold-600 text-darkRose font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-xl flex items-center justify-center gap-3 text-lg">
-                    <i class="fa-solid fa-calendar-check"></i>
-                    اتصال وحجز سريع
-                </a>
-                <a href="#services" class="border-2 border-white/50 hover:border-gold-500 hover:text-gold-500 px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 font-medium">
-                    اكتشفي خدماتنا
-                </a>
+      {/* Hero Section */}
+      <section id="hero" className="relative bg-gradient-to-b from-rose-50 to-[#FFF9F9] py-20 lg:py-32 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-6 text-center lg:text-right">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 text-rose-700">
+              <Sparkles className="w-3.5 h-3.5" /> مركز غزلان للتزيين النسائي فخامة تستحقينها
+            </span>
+            <h1 className="text-4xl sm:text-6xl font-extrabold text-gray-900 leading-tight">
+              أبرزي <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500">جمالكِ الساحر</span> <br />مع خبيراتنا
+            </h1>
+            <p className="text-lg text-gray-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+              في صالون غزلان بيوتي بأبها، نجمع لكِ بين أحدث صيحات الموضة والعناية الاحترافية لنوفر لكِ تجربة استرخاء وتجميل لا تُنسى.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white px-8 py-3.5 rounded-xl font-bold shadow-lg hover:bg-emerald-700 transition">
+                <MessageSquare className="w-5 h-5" /> حجز سريع عبر الواتساب
+              </a>
+              <a href="#services" className="flex items-center justify-center bg-white border-2 border-rose-200 text-rose-600 px-8 py-3.5 rounded-xl font-bold hover:bg-rose-50 transition">
+                اكتشفي خدماتنا
+              </a>
             </div>
+          </div>
+          <div className="relative mx-auto lg:ml-0">
+            <div className="absolute -top-4 -left-4 w-72 h-72 bg-rose-200 rounded-full filter blur-3xl opacity-40 mix-blend-multiply animate-blob"></div>
+            <div className="absolute -bottom-4 -right-4 w-72 h-72 bg-amber-200 rounded-full filter blur-3xl opacity-40 mix-blend-multiply animate-blob animation-delay-2000"></div>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+              {/* صورة احترافية تعبيرية لصالون تجميل */}
+              <img 
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80" 
+                alt="Ghizlan Beauty Center" 
+                className="w-full h-[450px] object-cover object-center"
+              />
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
-            <div class="relative">
-                <div class="absolute inset-0 bg-gold-500 rounded-3xl transform rotate-3 scale-95 opacity-20 -z-10"></div>
-                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop" alt="عناية بالبشرة" class="rounded-3xl shadow-2xl w-full object-cover h-[400px]">
-            </div>
-            <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-darkRose mb-6 relative inline-block">
-                    لماذا غزلان بيوتي؟
-                    <span class="absolute bottom-0 right-0 w-16 h-1 bg-gold-500 rounded"></span>
-                </h2>
-                <p class="text-slate-600 mb-6 leading-relaxed text-lg">نحن في صالون غزلان بيوتي نحرص على دمج الفخامة والاحترافية لتوفير تجربة استرخاء وتجميل فريدة لكل امرأة تبحث عن التميز في أبها.</p>
-                <div class="space-y-4">
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gold-100 p-3 rounded-xl text-gold-700 mt-1">
-                            <i class="fa-solid fa-wand-magic-sparkles text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-darkRose text-lg">خبيرات محترفات</h4>
-                            <p class="text-slate-500">طاقم عمل متكامل يمتلك خبرة طويلة لمواكبة أحدث صيحات الموضة والجمال.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <div class="bg-gold-100 p-3 rounded-xl text-gold-700 mt-1">
-                            <i class="fa-solid fa-heart text-xl"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-darkRose text-lg">منتجات عالمية وعالية الجودة</h4>
-                            <p class="text-slate-500">نستخدم أفضل الماركات العالمية الآمنة لضمان حماية وصحة شعرك وبشرتك.</p>
-                        </div>
-                    </div>
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">خدماتنا المتميزة</h2>
+            <div className="w-16 h-1 bg-gradient-to-r from-rose-500 to-amber-500 mx-auto rounded-full"></div>
+            <p className="text-gray-600">نقدم لك باقة متكاملة من أرقى خدمات التجميل والعناية الشخصية تحت سقف واحد</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="bg-[#FFF9F9] p-8 rounded-2xl border border-rose-50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-6">
+                  {service.icon}
                 </div>
-            </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{service.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gold-50">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-darkRose mb-4">خدماتنا المتميزة</h2>
-            <p class="text-slate-500 max-w-xl mx-auto mb-16">كل ما تحتاجينه لتبرزي جمالكِ وتستعيدي حيويتك في مكان واحد مصمم لراحتك.</p>
+      {/* Info & Contact Section */}
+      <section id="contact" className="py-20 bg-gradient-to-t from-rose-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-darkRose text-gold-500 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 group-hover:bg-gold-500 group-hover:text-darkRose transition-all duration-300">
-                        <i class="fa-solid fa-scissors"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-darkRose mb-3">تسريح وتصفيف الشعر</h3>
-                    <p class="text-slate-500 leading-relaxed">قص، صبغات مواكبة للموضة، معالجات بروتين وفيرا، وتسريحات مبتكرة للمناسبات والأعراس.</p>
+            {/* تفاصيل الاتصال والمعلومات المستخرجة من جوجل مابس */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">مرحباً بكِ في موقعنا</h2>
+                <p className="text-gray-600">يسعدنا دائماً تواصلك معنا وزيارتك لنا في موقعنا بأبها. إليك كافة التفاصيل للوصول إلينا:</p>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-rose-50">
+                  <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center shrink-0">
+                    <MapPin className="w-5 h-5 text-rose-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">العنوان والموقع</h4>
+                    <p className="text-gray-600 text-sm mt-1">المنسك، أبها 62527، المملكة العربية السعودية</p>
+                    <a href={mapLink} target="_blank" rel="noopener noreferrer" className="text-rose-600 text-xs font-semibold underline mt-2 inline-block">توجيهات القيادة عبر خرائط Google</a>
+                  </div>
                 </div>
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-darkRose text-gold-500 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 group-hover:bg-gold-500 group-hover:text-darkRose transition-all duration-300">
-                        <i class="fa-solid fa-face-smile-beam"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-darkRose mb-3">المكياج والتجميل</h3>
-                    <p class="text-slate-500 leading-relaxed">مكياج سينمائي، ناعم، أو خاص بالعرائس بأيدي خبيرات تجميل يبرزن ملامحك بكل جاذبية.</p>
-                </div>
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-2xl shadow-md border border-slate-100 hover:shadow-xl transition-all duration-300 group hover:-translate-y-1">
-                    <div class="w-16 h-16 bg-darkRose text-gold-500 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-6 group-hover:bg-gold-500 group-hover:text-darkRose transition-all duration-300">
-                        <i class="fa-solid fa-spa"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-darkRose mb-3">العناية بالبشرة والأظافر</h3>
-                    <p class="text-slate-500 leading-relaxed">جلسات تنظيف بشرة عميق، بديكير ومنيكير احترافي، وتركيب وتزيين الأظافر بأحدث الطرق.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Hours & Location Info Section -->
-    <section id="hours" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="bg-darkRose text-white rounded-3xl p-8 md:p-12 shadow-2xl grid md:grid-cols-2 gap-8 items-center border border-gold-500/30">
-                <div>
-                    <h3 class="text-2xl font-bold text-gold-500 mb-6 flex items-center gap-2">
-                        <i class="fa-regular fa-clock"></i>
-                        أوقات العمل واستقبالكم
-                    </h3>
-                    <ul class="space-y-3 text-slate-300">
-                        <li class="flex justify-between border-b border-white/10 pb-2"><span>السبت:</span> <span class="text-white font-semibold">1:30 م – 10:00 م</span></li>
-                        <li class="flex justify-between border-b border-white/10 pb-2"><span>الأحد:</span> <span class="text-white font-semibold">2:30 م – 10:00 م</span></li>
-                        <li class="flex justify-between border-b border-white/10 pb-2"><span>الاثنين إلى الأربعاء:</span> <span class="text-white font-semibold">2:00 م – 10:00 م</span></li>
-                        <li class="flex justify-between pb-2"><span>الخميس والجمعة:</span> <span class="text-white font-semibold">1:30 م – 10:00 م</span></li>
-                    </ul>
+                <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-rose-50">
+                  <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5 text-rose-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">أوقات العمل</h4>
+                    <p className="text-gray-600 text-sm mt-1">يومياً: من الساعة 2:00 مساءً حتى 10:00 مساءً</p>
+                  </div>
                 </div>
-                <div class="text-center md:text-right border-t md:border-t-0 md:border-r border-white/10 pt-6 md:pt-0 md:pr-8">
-                    <h4 class="text-xl font-bold text-gold-500 mb-4"><i class="fa-solid fa-location-dot ml-2"></i>موقعنا في أبها</h4>
-                    <p class="text-slate-300 mb-6 leading-relaxed">حي البديع - شارع الكلية التقنية، الموظفين، أبها 62581، المملكة العربية السعودية.</p>
-                    <a href="https://maps.google.com/?cid=5156027626580578892" target="_blank" class="inline-flex items-center gap-2 bg-white/10 hover:bg-gold-500 hover:text-darkRose text-gold-500 px-6 py-3 rounded-xl transition-all duration-300 border border-gold-500/30 font-medium">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        فتح في خرائط Google
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer / Contact Section -->
-    <footer id="contact" class="bg-darkRose text-white pt-16 pb-8 border-t border-gold-500/20">
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 mb-12">
-            <div>
-                <h3 class="text-xl font-bold text-gold-500 mb-4">غزلان بيوتي</h3>
-                <p class="text-slate-400 leading-relaxed mb-6">صالونكِ المفضل في أبها للعناية الكاملة والتزيين النسائي الراقي بلمسات تفيض بالأنوثة والجمال.</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold text-gold-500 mb-4">اتصال سريع</h3>
-                <p class="text-slate-400 mb-2">يسعدنا استقبال استفساراتكم وحجوزاتكم عبر:</p>
-                <a href="tel:+966559379990" class="text-xl font-bold text-white hover:text-gold-500 transition-colors block mb-2 dir-ltr text-right">
-                    <i class="fa-solid fa-phone text-gold-500 ml-2"></i> +966 55 937 9990
+                <div className="flex items-start gap-4 bg-white p-5 rounded-xl shadow-sm border border-rose-50">
+                  <div className="w-10 h-10 bg-rose-100 rounded-lg flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-rose-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">الاتصال المباشر</h4>
+                    <p className="text-gray-600 text-sm mt-1" dir="ltr">{phone}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <a href={`tel:${phone}`} className="flex-1 text-center bg-gray-900 text-white py-3.5 rounded-xl font-bold hover:bg-gray-800 transition">
+                  اتصلي الآن
                 </a>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex-1 text-center bg-emerald-600 text-white py-3.5 rounded-xl font-bold hover:bg-emerald-700 transition">
+                  راسلنا واتساب
+                </a>
+              </div>
             </div>
-            <div>
-                <h3 class="text-xl font-bold text-gold-500 mb-4">روابط سريعة</h3>
-                <div class="flex flex-col space-y-2 text-slate-400">
-                    <a href="#about" class="hover:text-gold-500 transition-colors">من نحن</a>
-                    <a href="#services" class="hover:text-gold-500 transition-colors">خدماتنا المتميزة</a>
-                    <a href="#hours" class="hover:text-gold-500 transition-colors">مواعيد الدوام</a>
-                </div>
-            </div>
-        </div>
-        <div class="container mx-auto px-6 border-t border-white/10 pt-6 text-center text-sm text-slate-500">
-            <p>&copy; 2026 صالون غزلان بيوتي. جميع الحقوق محفوظة.</p>
-        </div>
-    </footer>
 
-</body>
-</html>
+            {/* الخريطة التفاعلية وصورة الصالون الإضافية */}
+            <div className="space-y-6">
+              <div className="rounded-2xl overflow-hidden shadow-md border border-rose-100 h-80 bg-gray-200 relative">
+                {/* هنا يمكنك تضمين الـ iframe الخاص بجوجل مابس الفعلي أو الاكتفاء بالزر لفتح التطبيق */}
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.0850239967675!2d42.5871072!3d18.2284724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fcaafef8486529%3A0x478de3cefe6f924c!2sGHIZLAN%20BEAUTY%20CENTER!5e0!3m2!1sar!2ssa!4v1718900000000!5m2!1sar!2ssa" 
+                  className="w-full h-full border-0" 
+                  allowFullScreen={true} 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <div className="bg-gradient-to-r from-rose-500 to-amber-600 text-white p-8 rounded-2xl shadow-xl space-y-4">
+                <h3 className="text-xl font-bold">لماذا تختارين صالون غزلان بيوتي؟</h3>
+                <p className="text-sm text-rose-50 leading-relaxed">
+                  لأننا نهتم بأدق تفاصيل راحتكِ وجمالكِ، ونستخدم فقط المنتجات العالمية المعتمدة لضمان أفضل النتائج لشعركِ وبشرتكِ وأظافركِ.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-400 py-8 border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+          <div>
+            &copy; {new Date().getFullYear()} صالون غزلان بيوتي. جميع الحقوق محفوظة.
+          </div>
+          <div className="flex space-x-6 space-x-reverse">
+            <a href={mapLink} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">موقعنا على الخريطة</a>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="hover:text-white transition">الدعم الفني والحجوزات</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  );
+}
