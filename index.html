@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صالون غزلان بيوتي | للتزيين النسائي الفاخر</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts (Cairo) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Alpine.js for Interactivity -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <script>
         tailwind.config = {
-            theme {
+            theme: {
                 extend: {
                     colors: {
                         brand: {
@@ -43,9 +39,8 @@
 </head>
 <body class="bg-brand-rose/30 text-brand-dark overflow-x-hidden" x-data="{ mobileMenu: false }">
 
-    <!-- Top Bar (Quick Info) -->
     <div class="bg-brand-dark text-brand-rose text-xs py-2 px-4 sticky top-0 z-50 border-b border-brand-gold/20 hidden md:block">
-        <div class="max-w-7-xl mx-auto flex justify-between items-center px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-4">
             <div class="flex items-center gap-4">
                 <span><i class="fa-solid fa-clock text-brand-gold ml-1"></i> يومياً: 2:00 م – 10:00 م</span>
                 <span><i class="fa-solid fa-location-dot text-brand-gold ml-1"></i> أبها، المملكة العربية السعودية</span>
@@ -56,16 +51,13 @@
         </div>
     </div>
 
-    <!-- Header / Navigation -->
     <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 md:top-[32px] z-40 border-b border-brand-rose">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <!-- Logo / Brand Name -->
             <a href="#" class="flex flex-col">
                 <span class="text-xl md:text-2xl font-extrabold tracking-wider text-brand-darkrose">غزلان بيوتي</span>
                 <span class="text-[10px] text-brand-gold uppercase tracking-widest font-semibold -mt-1">Beauty Center</span>
             </a>
 
-            <!-- Desktop Menu -->
             <nav class="hidden md:flex items-center gap-8 font-semibold text-sm">
                 <a href="#" class="text-brand-darkrose hover:text-brand-gold transition">الرئيسية</a>
                 <a href="#about" class="text-gray-600 hover:text-brand-darkrose transition">عن الصالون</a>
@@ -75,20 +67,17 @@
                 <a href="#contact" class="text-gray-600 hover:text-brand-darkrose transition">اتصلي بنا</a>
             </nav>
 
-            <!-- CTA Desktop Button -->
             <div class="hidden md:block">
                 <a href="https://wa.me/966540306124?text=مرحباً%20صالون%20غزلان%20بيوتي%20أود%20حجز%20موعد" target="_blank" class="gold-gradient text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:opacity-90 transition flex items-center gap-2">
                     <i class="fa-brands fa-whatsapp text-lg"></i> احجزي موعدكِ الآن
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button @click="mobileMenu = !mobileMenu" class="md:hidden text-brand-darkrose p-2 focus:outline-none">
                 <i class="fa-solid text-2xl" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
             </button>
         </div>
 
-        <!-- Mobile Navigation Dropdown -->
         <div x-show="mobileMenu" x-collapse x-transition.duration.300ms class="md:hidden bg-white border-t border-brand-rose px-4 py-4 space-y-3 shadow-inner" style="display: none;">
             <a href="#" @click="mobileMenu = false" class="block py-2 text-brand-darkrose font-bold">الرئيسية</a>
             <a href="#about" @click="mobileMenu = false" class="block py-2 text-gray-700 font-semibold">عن الصالون</a>
@@ -102,16 +91,13 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="relative bg-brand-rose/20 py-20 lg:py-32 overflow-hidden flex items-center">
-        <!-- Background Elements -->
         <div class="absolute top-0 right-0 w-96 h-96 bg-brand-rose rounded-full filter blur-3xl opacity-60 transform translate-x-1/3 -translate-y-1/3"></div>
         <div class="absolute bottom-0 left-0 w-80 h-80 bg-brand-gold/10 rounded-full filter blur-2xl opacity-50 transform -translate-x-1/4 translate-y-1/4"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <!-- Text Content -->
                 <div class="lg:col-span-7 text-center lg:text-right space-y-6">
                     <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-darkrose/10 text-brand-darkrose text-sm font-semibold tracking-wide">
                         <i class="fa-solid fa-sparkles text-brand-gold"></i> عالم من الفخامة والجمال يليق بكِ
@@ -136,15 +122,12 @@
                     </div>
                 </div>
 
-                <!-- Hero Images (Grid Styling for Professional Stock Look) -->
                 <div class="lg:col-span-5 relative mt-8 lg:mt-0">
                     <div class="relative w-72 sm:w-80 h-[420px] mx-auto rounded-[2rem] border-4 border-white shadow-2xl overflow-hidden z-10 bg-gray-200">
-                        <!-- Main Pro Stock Photo: Makeup / Hair Styling concept -->
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=600" alt="صالون تجميل" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=600&auto=format&fit=crop" alt="صالون تجميل" class="w-full h-full object-cover">
                     </div>
-                    <!-- Small absolute image for layout depth -->
                     <div class="absolute -bottom-6 -right-6 w-44 h-44 rounded-2xl border-4 border-white shadow-xl overflow-hidden hidden sm:block z-20 bg-gray-100">
-                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=300" alt="مكياج فاخر" class="w-full h-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=300&auto=format&fit=crop" alt="مكياج فاخر" class="w-full h-full object-cover">
                     </div>
                 </div>
 
@@ -152,14 +135,13 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="order-2 lg:order-1">
                     <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=400" alt="صالون غزلان" class="rounded-2xl shadow-md h-48 w-full object-cover mt-8">
-                        <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?auto=format&fit=crop&q=80&w=400" alt="أظافر وتجميل" class="rounded-2xl shadow-md h-48 w-full object-cover">
+                        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=400&auto=format&fit=crop" alt="صالون غزلان" class="rounded-2xl shadow-md h-48 w-full object-cover mt-8">
+                        <img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=400&auto=format&fit=crop" alt="أظافر وتجميل" class="rounded-2xl shadow-md h-48 w-full object-cover">
                     </div>
                 </div>
                 <div class="space-y-6 order-1 lg:order-2 text-center lg:text-right">
@@ -183,7 +165,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="py-20 bg-brand-rose/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="text-brand-darkrose font-bold text-sm uppercase tracking-widest block mb-2">خدماتنا المميزة</span>
@@ -191,10 +172,9 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
-                <!-- Service 1 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-brand-rose hover:shadow-xl transition duration-300 overflow-hidden flex flex-col group">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=400" alt="تسريحات شعر" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=500&auto=format&fit=crop" alt="تسريحات شعر" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent"></div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between text-right">
@@ -205,10 +185,9 @@
                     </div>
                 </div>
 
-                <!-- Service 2 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-brand-rose hover:shadow-xl transition duration-300 overflow-hidden flex flex-col group">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=400" alt="مكياج" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=500&auto=format&fit=crop" alt="مكياج" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent"></div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between text-right">
@@ -219,10 +198,9 @@
                     </div>
                 </div>
 
-                <!-- Service 3 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-brand-rose hover:shadow-xl transition duration-300 overflow-hidden flex flex-col group">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1604654894610-df4906efd57c?auto=format&fit=crop&q=80&w=400" alt="أظافر" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?q=80&w=500&auto=format&fit=crop" alt="أظافر" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent"></div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between text-right">
@@ -233,10 +211,9 @@
                     </div>
                 </div>
 
-                <!-- Service 4 -->
                 <div class="bg-white rounded-2xl shadow-sm border border-brand-rose hover:shadow-xl transition duration-300 overflow-hidden flex flex-col group">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&q=80&w=400" alt="عناية بالبشرة" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=500&auto=format&fit=crop" alt="عناية بالبشرة" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/40 to-transparent"></div>
                     </div>
                     <div class="p-6 flex-grow flex flex-col justify-between text-right">
@@ -257,7 +234,6 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="text-brand-gold font-bold text-sm uppercase tracking-widest block mb-2">ألبوم التميز</span>
@@ -265,22 +241,21 @@
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div class="h-64 rounded-2xl overflow-hidden shadow-sm bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&q=80&w=400" alt="مستحضرات تجميل" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1608248597481-496100c8c836?q=80&w=500&auto=format&fit=crop" alt="مستحضرات تجميل" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                 </div>
                 <div class="h-64 rounded-2xl overflow-hidden shadow-sm bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&q=80&w=400" alt="مكياج أدوات" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=500&auto=format&fit=crop" alt="مكياج أدوات" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                 </div>
                 <div class="h-64 rounded-2xl overflow-hidden shadow-sm bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&fit=crop&q=80&w=400" alt="تصفيف شعر" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?q=80&w=500&auto=format&fit=crop" alt="تصفيف شعر" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                 </div>
                 <div class="h-64 rounded-2xl overflow-hidden shadow-sm bg-gray-100">
-                    <img src="https://images.unsplash.com/photo-1519415510236-8a59ddadf584?auto=format&fit=crop&q=80&w=400" alt="جلسة عناية" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=500&auto=format&fit=crop" alt="جلسة عناية" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews / Google Testimonials Section -->
     <section id="reviews" class="py-20 bg-brand-rose/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="text-brand-darkrose font-bold text-sm uppercase tracking-widest block mb-2">تقييمات زبوناتنا</span>
@@ -295,7 +270,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-rose/60 text-right space-y-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-2">
@@ -307,7 +281,6 @@
                     <p class="text-gray-600 text-sm leading-relaxed">"بصراحة من أفضل الصالونات في أبها، شغل نظيف ومرتب، سويت عندهم صبغة وتسريحة وطلعت النتيجة تجنن وخبيرات الشعر عسل وتعاملهن راقي جداً."</p>
                 </div>
 
-                <!-- Review 2 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-rose/60 text-right space-y-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-2">
@@ -319,7 +292,6 @@
                     <p class="text-gray-600 text-sm leading-relaxed">"المكياج عندهم خيااال، نظيف وناعم ومبرز لملامح الوجه بدون مبالغة والمكان مريح ويهبل والأسعار مناسبة جداً مقارنة بجودة الشغل الفخم."</p>
                 </div>
 
-                <!-- Review 3 -->
                 <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-rose/60 text-right space-y-4">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center gap-2">
@@ -334,12 +306,10 @@
         </div>
     </section>
 
-    <!-- Interactive Contact & Booking Form Section -->
     <section id="contact" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                 
-                <!-- Contact Info Panel -->
                 <div class="lg:col-span-5 bg-brand-dark text-white p-8 rounded-3xl space-y-8 text-right flex flex-col justify-between">
                     <div class="space-y-6">
                         <h3 class="text-2xl font-bold text-brand-rose">مرحباً بكِ في غزلان بيوتي</h3>
@@ -370,13 +340,11 @@
                         </div>
                     </div>
 
-                    <!-- Embed Google Map -->
                     <div class="w-full h-48 rounded-xl overflow-hidden mt-6 opacity-80 hover:opacity-100 transition">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.2355446210087!2d42.58491857582531!3d18.228477432857403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fcaafef8486529%3A0x478de3cefe6f924c!2sGHIZLAN%20BEAUTY%20CENTER!5e0!3m2!1sar!2ssa!4v1718800000000!5m2!1sar!2ssa" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.116644675549!2d42.5085603!3d18.2163953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15fcdbe8f8796529%3A0x47cddec9fe6f924c!2z2LXYp9mE2YjZhiDZg9iy2YTYp9mGINio2YrZiNiq2Yog2YTZhNiq2L夸2YrZitmGINin2YTZbarvbnNhaWk!5e0!3m2!1sar!2ssa!4v1710000000000!5m2!1sar!2ssa" class="w-full h-full border-0" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
 
-                <!-- WhatsApp Smart Booking Builder Form -->
                 <div class="lg:col-span-7 bg-brand-rose/20 p-8 rounded-3xl text-right" x-data="{ name: '', service: 'مكياج سهرات', date: '' }">
                     <h3 class="text-2xl font-bold text-brand-darkrose mb-2">منظم الحجز السريع</h3>
                     <p class="text-gray-600 text-sm mb-6">املئي البيانات التالية لإنشاء رسالة حجز مخصصة وإرسالها فوراً عبر الواتساب للصالون لتأكيد الموعد.</p>
@@ -402,7 +370,7 @@
                         </div>
 
                         <div class="pt-4">
-                            <a :href="'https://wa.me/966540306124?text=' + encodeURIComponent('مرحباً صالون غزلان بيوتي، أود الاستفسار وتأكيد حجز موعد.\n\nالاسم: ' + name + '\nالخدمة: ' + service + '\nالتاريخ المفضل: ' + date)" target="_blank" class="w-full text-center inline-block rose-gradient text-white font-bold py-4 rounded-xl shadow-md hover:opacity-95 transition">
+                            <a :href="'https://wa.me/966540306124?text=' + encodeURIComponent('مرحباً صالون غزلان بيوتي، أود الاستفسار وتأكيد حجز موعد.\n\nالاسم: ' + name + '\nالخدمة: ' + service + '\nالتاريخ المفضل: ' + date)" target="_blank" class="w-full text-center inline-block rose-gradient text-white font-bold py-4 rounded-xl shadow-md hover:opacity-95 transition cursor-pointer">
                                 <i class="fa-brands fa-whatsapp ml-2 text-lg"></i> إرسال طلب الحجز للواتساب
                             </a>
                         </div>
@@ -413,14 +381,12 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-brand-dark text-gray-400 py-12 border-t border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
             <h3 class="text-xl font-bold text-brand-rose">صالون غزلان بيوتي للتزيين النسائي</h3>
             <p class="text-xs max-w-md mx-auto leading-relaxed">جميع الحقوق محفوظة © 2026 صالون غزلان بيوتي. تم التصميم والتطوير بكل حب لخدمة تألقك وجمالك الدائم.</p>
             <div class="flex justify-center gap-6 text-lg text-brand-gold">
                 <a href="https://wa.me/966540306124" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://www.google.com/maps/place/GHIZLAN+BEAUTY+CENTER/@18.2284724,42.5871072,17z" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-map-location-dot"></i></a>
             </div>
         </div>
     </footer>
